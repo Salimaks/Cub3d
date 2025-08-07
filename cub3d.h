@@ -6,7 +6,7 @@
 /*   By: skassimi <skassimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:43:50 by skassimi          #+#    #+#             */
-/*   Updated: 2025/08/05 19:09:44 by skassimi         ###   ########.fr       */
+/*   Updated: 2025/08/06 20:32:59 by skassimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <math.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 42
@@ -26,7 +29,7 @@
 
 typedef struct s_map
 {
-    char **map;
+    char **file_content;
     int width;
     int height;
 
@@ -42,9 +45,13 @@ typedef struct s_map
     int player_y;
     char direction;
 
-}t_map;
+}               t_map;
 
 int check_args(char **argv, int argc);
 int main(int argc, char **argv);
+char *get_next_line(int fd);
+int check_args(char **argv, int argc);
+char **get_file_in_tab(char **av);
+int parser(int ac, char **av, t_map **map);
 
 #endif

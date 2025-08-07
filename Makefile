@@ -6,7 +6,7 @@
 #    By: skassimi <skassimi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 13:45:05 by skassimi          #+#    #+#              #
-#    Updated: 2025/08/05 19:10:11 by skassimi         ###   ########.fr        #
+#    Updated: 2025/08/06 17:42:26 by skassimi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ RM = rm -f
 SOURCES = main.c \
 		check.c \
 		get_next_line.c \
+		parser.c \
 	
 OBJECTS = $(SOURCES:.c=.o)
 
